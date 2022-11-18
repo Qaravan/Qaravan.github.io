@@ -1,4 +1,4 @@
-# Qaravan
+# Qaravan.store - decentralized marketplace
 
 <img alt="Qaravan" src="https://github.com/Qaravan/Qaravan.github.io/raw/main/public/Screenshot1.png">
 
@@ -22,7 +22,7 @@ They should all have equal rights on the app. Any user can be a buyer or a selle
 
 ### Adding a new delivery service
 
-<img alt="Qaravan" src="https://github.com/Qaravan/Qaravan.github.io/raw/main/public/Screenshot6.png">
+<img alt="Qaravan Add Delivery" src="https://github.com/Qaravan/Qaravan.github.io/raw/main/public/Screenshot6.png">
 
 - Using the JobID of an external Chainlink adapter
   - NovaPoshta <a href="https://developers.novaposhta.ua/">developers portal</a> (<a href="https://github.com/smartcontractkit/external-adapters-js/pull/2294">NovaPoshta External Adapter</a>);
@@ -32,11 +32,13 @@ They should all have equal rights on the app. Any user can be a buyer or a selle
   - ...
 - Using the request API via Chainlink (specify the URL and path in the JSON response)
 
+<img alt="Qaravan Delivery Services" src="https://github.com/Qaravan/Qaravan.github.io/raw/main/public/Screenshot7.png">
+
 ---
 
 ### Adding a new seller
 
-<img alt="Qaravan" src="https://github.com/Qaravan/Qaravan.github.io/raw/main/public/Screenshot5.png">
+<img alt="Qaravan Add Seller" src="https://github.com/Qaravan/Qaravan.github.io/raw/main/public/Screenshot5.png">
 
 In order to start selling products on the Caravan marketplace, you need to register as a seller. The products in the marketplace are compatible with the ERC1155 standard + several additional fields in the metadata.
 
@@ -57,11 +59,11 @@ Specify the `Token` and `Amount` fields in the metadata of your products. Thanks
 
 ---
 
-<img alt="Qaravan" src="https://github.com/Qaravan/Qaravan.github.io/raw/main/public/Screenshot3.png">
+<img alt="Qaravan Sellers" src="https://github.com/Qaravan/Qaravan.github.io/raw/main/public/Screenshot3.png">
 
 ---
 
-<img alt="Qaravan" src="https://github.com/Qaravan/Qaravan.github.io/raw/main/public/Screenshot4.png">
+<img alt="Qaravan Goods" src="https://github.com/Qaravan/Qaravan.github.io/raw/main/public/Screenshot4.png">
 
 ---
 
