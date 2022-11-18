@@ -7,14 +7,16 @@ import {
   Image,
 } from "@mantine/core";
 import { IconCircleCheck } from "@tabler/icons";
+import logo from "../assets/logo.png";
+import bg from "../assets/bg.png";
 
 export default function Index() {
   return (
     <Box sx={{ maxWidth: "100%" }} mx="auto">
       <Center m={10}>
-        <Image src="/src/assets/sm.png" width={200} />
+        <Image src={logo} width={200} />
       </Center>
-      <BackgroundImage src="/src/assets/bg.png" radius="lg">
+      <BackgroundImage src={bg} radius="lg">
         <List
           spacing="md"
           p={100}
