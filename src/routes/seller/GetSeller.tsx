@@ -2,7 +2,7 @@ import axios from "axios";
 import { BigNumber, ethers } from "ethers";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import EthCrypto from "eth-crypto";
+// import EthCrypto from "eth-crypto";
 import { Modal } from "@mantine/core";
 import { forwardRef } from "react";
 import { Avatar, Select } from "@mantine/core";

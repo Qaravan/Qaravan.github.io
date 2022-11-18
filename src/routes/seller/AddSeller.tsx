@@ -1,6 +1,6 @@
 import { useContractWrite, usePrepareContractWrite } from "wagmi";
 import { useLocalStorage } from "@mantine/hooks";
-import EthCrypto from "eth-crypto";
+// import EthCrypto from "eth-crypto";
 import { useEffect, useState } from "react";
 import { useForm } from "@mantine/form";
 import { TextInput, Button, Box, Image, Text, SimpleGrid } from "@mantine/core";
@@ -18,8 +18,8 @@ export default function AddSeller() {
 
   useEffect(() => {
     if (!sellerPublicKey) {
-      const identity = EthCrypto.createIdentity();
-      setSellerPublicKey(identity);
+      // const identity = EthCrypto.createIdentity();
+      // setSellerPublicKey(identity);
     }
   }, [sellerPublicKey]);
 
