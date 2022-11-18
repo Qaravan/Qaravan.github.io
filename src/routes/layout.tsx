@@ -18,7 +18,7 @@ import {
   Flex,
 } from "@mantine/core";
 import { Link, Outlet } from "react-router-dom";
-import { useAccount, useConnect } from "wagmi";
+import { useAccount, useConnect, useNetwork, useSwitchNetwork } from "wagmi";
 import {
   IconAlertCircle,
   IconHome2,
@@ -28,6 +28,7 @@ import {
   IconShoppingCart,
   IconCopyright,
 } from "@tabler/icons";
+import Index from ".";
 
 export default function Layout() {
   const theme = useMantineTheme();
@@ -36,6 +37,16 @@ export default function Layout() {
   const { address, isConnected }: any = useAccount();
   const { connect, connectors, error, isLoading, pendingConnector }: any =
     useConnect();
+
+  const { chain } = useNetwork();
+  console.log("chain", chain);
+  const {
+    chains,
+    error: errorChain,
+    isLoading: isLoadingChain,
+    pendingChainId,
+    switchNetwork,
+  } = useSwitchNetwork();
 
   return (
     <AppShell
@@ -151,41 +162,82 @@ export default function Layout() {
       }
     >
       {isConnected ? (
-        <Outlet />
-      ) : (
-        <SimpleGrid>
-          <SimpleGrid cols={2}>
-            {connectors.map((connector: any) => (
-              <Button
-                fullWidth
-                mt={10}
-                color="teal"
-                variant="light"
-                uppercase
-                disabled={!connector.ready}
-                key={connector.id}
-                onClick={() => connect({ connector })}
-              >
-                {connector.name}
-                {!connector.ready && " (unsupported)"}
-                {isLoading &&
-                  connector.id === pendingConnector?.id &&
-                  " (connecting)"}
-              </Button>
-            ))}
-          </SimpleGrid>
+        chain?.unsupported ? (
+          <Box style={{ margin: "150px auto" }}>
+            <SimpleGrid style={{ width: "50%", margin: "auto" }}>
+              <SimpleGrid cols={2}>
+                {chains.map((x) => (
+                  <Button
+                    fullWidth
+                    mt={5}
+                    color="yellow"
+                    variant="light"
+                    uppercase
+                    disabled={!switchNetwork || x.id === chain?.id}
+                    key={x.id}
+                    onClick={() => switchNetwork?.(x.id)}
+                    size="xl"
+                  >
+                    {x.name}
+                    {isLoadingChain &&
+                      pendingChainId === x.id &&
+                      " (switching)"}
+                  </Button>
+                ))}
+              </SimpleGrid>
 
-          {error && (
-            <Alert
-              icon={<IconAlertCircle size={16} />}
-              title="Ooups!"
-              color="red"
-              my={10}
-            >
-              {error.message}
-            </Alert>
-          )}
-        </SimpleGrid>
+              {errorChain && (
+                <Alert
+                  icon={<IconAlertCircle size={16} />}
+                  title="Ooups!"
+                  color="red"
+                  my={10}
+                >
+                  {errorChain.message}
+                </Alert>
+              )}
+            </SimpleGrid>
+          </Box>
+        ) : (
+          <Outlet />
+        )
+      ) : (
+        <Box style={{ margin: "150px auto" }}>
+          <SimpleGrid style={{ width: "50%", margin: "auto" }}>
+            <SimpleGrid cols={2}>
+              {connectors.map((connector: any) => (
+                <Button
+                  fullWidth
+                  mt={5}
+                  color="yellow"
+                  variant="light"
+                  uppercase
+                  disabled={!connector.ready}
+                  key={connector.id}
+                  onClick={() => connect({ connector })}
+                  size="xl"
+                >
+                  {connector.name}
+                  {!connector.ready && " (unsupported)"}
+                  {isLoading &&
+                    connector.id === pendingConnector?.id &&
+                    " (connecting)"}
+                </Button>
+              ))}
+            </SimpleGrid>
+
+            {error && (
+              <Alert
+                icon={<IconAlertCircle size={16} />}
+                title="Ooups!"
+                color="red"
+                my={10}
+              >
+                {error.message}
+              </Alert>
+            )}
+          </SimpleGrid>
+        </Box>
       )}
     </AppShell>
   );

@@ -13,7 +13,7 @@ import bg from "../assets/bg.png";
 export default function Index() {
   return (
     <Box sx={{ maxWidth: "100%" }} mx="auto">
-      <Center m={10}>
+      <Center m={50}>
         <Image src={logo} width={200} />
       </Center>
       <BackgroundImage src={bg} radius="lg">
