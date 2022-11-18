@@ -259,7 +259,7 @@ function CardGoods({
   });
 
   useEffect(() => {
-    if (deliveryServices.pages) {
+    if (deliveryServices && deliveryServices.pages) {
       const res: any = [];
       deliveryServices.pages[0].forEach((ds: any, i: any) => {
         if (ds[0] === ethers.constants.AddressZero) return;
@@ -268,7 +268,7 @@ function CardGoods({
       });
       setDeliveryServ(res);
     }
-  }, deliveryServices);
+  }, [deliveryServices]);
 
   const { config: configToken }: any = usePrepareContractWrite({
     address: erc20,
