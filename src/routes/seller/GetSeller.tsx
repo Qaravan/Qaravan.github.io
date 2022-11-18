@@ -84,6 +84,7 @@ export default function GetSeller() {
   }
 
   useEffect(() => {
+    if (!nftData || !nftData.pages) return;
     const URLs: any = [];
     nftData.pages.forEach((page: any, pageIndex: any) => {
       for (let i = 0; i < page.length; i = i + 2) {
