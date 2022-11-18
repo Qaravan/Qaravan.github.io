@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>API NovaPoshta | NovaPost</title>
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png" />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="/apple-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="/apple-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="/apple-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="/apple-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/apple-icon-180x180.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="/android-icon-192x192.png"
+    />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
+    <meta name="theme-color" content="#ffffff" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Share+Tech"
+    />
+    <style>
+      body,
+      html {
+        background-color: #000;
+        color: #fff;
+        font-size: 20px;
+      }
+      .bg {
+        background: url("delivery.png") no-repeat center center;
+        background-size: cover;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+      .container {
+        font-family: "Share Tech", sans-serif;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -moz-transform: translateX(-50%) translateY(-50%);
+        -webkit-transform: translateX(-50%) translateY(-50%);
+        transform: translateX(-50%) translateY(-50%);
+        text-align: center;
+      }
+      .container div {
+        padding: 10px;
+        margin: 10px;
+        background: rgba(60, 24, 24, 0.5);
+        border-radius: 10px;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bg"></div>
+    <div class="container">
+      <img src="nova.png" style="width: 100px" />
+      <div>https://api.novapost.online/{NUMBER}</div>
+      <span>Response: { "status": 1|2|3 }</span>
+      <ol style="text-align: left">
+        <li>SHIPPED</li>
+        <li>DELIVERED</li>
+        <li>CANCELED</li>
+      </ol>
+      <a
+        href="https://developers.novaposhta.ua/"
+        target="_blank"
+        style="color: rgb(102, 100, 100)"
+        >Developers Portal</a
+      >
+    </div>
+  </body>
+</html>

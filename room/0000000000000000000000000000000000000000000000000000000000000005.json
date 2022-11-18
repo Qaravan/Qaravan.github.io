@@ -1,0 +1,15 @@
+{
+  "description": "The picture will decorate your living room.",
+  "image": "https://bafybeib6jztt26whowgw2bc6k65xsq3e4mb63s7dwnbihsao6xiwvhcgha.ipfs.w3s.link/5.jpg",
+  "name": "Picture #5",
+  "attributes": [
+    {
+      "trait_type": "Token",
+      "value": "0x326C977E6efc84E512bB9C30f76E30c160eD06FB"
+    },
+    {
+      "trait_type": "Amount",
+      "value": "0.25"
+    }
+  ]
+}
