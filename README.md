@@ -4,7 +4,7 @@
 
 ---
 
-#### Three components of an ideal decentralized marketplace
+### Three components of an ideal decentralized marketplace
 
 <img alt="Qaravan users" src="https://github.com/Qaravan/Qaravan.github.io/raw/main/public/users.png">
 
@@ -14,9 +14,13 @@
 
 They should all have equal rights on the app. Any user can be a buyer or a seller. External Chainlink adapters check the order status from the delivery services via the API and change the order status inside the blockchain. Thus, buyers and sellers can not worry about the fact that one of them will be deceived. The seller will receive his money when the buyer picks up the goods from the delivery service. If the buyer does not receive his goods within 30 days, he has the right to return his money back.
 
+### How it works?
+
+<img alt="How it works Qaravan?" src="https://github.com/Qaravan/Qaravan.github.io/raw/main/public/how.png">
+
 ---
 
-#### Adding a new delivery service
+### Adding a new delivery service
 
 <img alt="Qaravan" src="https://github.com/Qaravan/Qaravan.github.io/raw/main/public/Screenshot6.png">
 
@@ -30,7 +34,7 @@ They should all have equal rights on the app. Any user can be a buyer or a selle
 
 ---
 
-#### Adding a new seller
+### Adding a new seller
 
 <img alt="Qaravan" src="https://github.com/Qaravan/Qaravan.github.io/raw/main/public/Screenshot5.png">
 
