@@ -106,8 +106,14 @@ export default function GetOrders() {
   return (
     <>
       {o && o.length ? (
-        o.map((item: any, i: any) => {
-          return <StepperOrder key={i} id={i + 1} item={item} />;
+        orders.pages[0].map((item: any, i: any) => {
+          if (
+            item &&
+            item[3] !== ethers.constants.AddressZero &&
+            (item[3] === addressAccount || item[4] === addressAccount)
+          ) {
+            return <StepperOrder key={i} id={i + 1} item={item} />;
+          }
         })
       ) : (
         <Notification icon={<IconX size={18} />} color="red" disallowClose>
@@ -200,7 +206,7 @@ function StepperOrder({ id, item }: any) {
         {active === 0 && (
           <Group position="center" mt="xl">
             <Notification title="Send goods to the address" disallowClose>
-              <Text>{delivery.deliveryAddress}</Text>
+              <Text>{delivery[1]}</Text>
             </Notification>
             <TextInput
               style={{ width: "100%" }}
