@@ -109,11 +109,9 @@ const myTheme: MantineThemeOverride = {
 };
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
-  <React.StrictMode>
-    <MantineProvider withGlobalStyles withNormalizeCSS theme={myTheme}>
-      <WagmiConfig client={client}>
-        <RouterProvider router={qaravan} />
-      </WagmiConfig>
-    </MantineProvider>
-  </React.StrictMode>
+  <MantineProvider withGlobalStyles withNormalizeCSS theme={myTheme}>
+    <WagmiConfig client={client}>
+      <RouterProvider router={qaravan} />
+    </WagmiConfig>
+  </MantineProvider>
 );
