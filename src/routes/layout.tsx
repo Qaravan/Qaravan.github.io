@@ -111,7 +111,7 @@ export default function Layout() {
             </Text>
             <Text style={{ textAlign: "right" }}>
               <Badge color="pink" variant="light" size="lg">
-                {chain?.name}
+                {chain?.name || "•"}
               </Badge>
             </Text>
           </SimpleGrid>
@@ -148,12 +148,14 @@ export default function Layout() {
               >
                 Qaravan
               </Text>
-              {address && (
-                <Badge color="green" variant="light" size="lg">
-                  {address?.slice(0, 4)}..
-                  {address?.slice(address.length - 2, address.length)}
-                </Badge>
-              )}
+
+              <Badge color="green" variant="light" size="lg">
+                {address
+                  ? address?.slice(0, 4) +
+                    ".." +
+                    address?.slice(address.length - 2, address.length)
+                  : "•"}
+              </Badge>
             </Flex>
           </div>
         </Header>
