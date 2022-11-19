@@ -1,4 +1,4 @@
-import { useContractWrite, usePrepareContractWrite } from "wagmi";
+import { useContractWrite, useNetwork, usePrepareContractWrite } from "wagmi";
 import { useLocalStorage } from "@mantine/hooks";
 // import EthCrypto from "eth-crypto";
 import { useEffect, useState } from "react";
@@ -6,10 +6,13 @@ import { useForm } from "@mantine/form";
 import { TextInput, Button, Box, Image, Text, SimpleGrid } from "@mantine/core";
 import { Dropzone, FileWithPath, IMAGE_MIME_TYPE } from "@mantine/dropzone";
 
-import { address, abiQaravan, abiERC1155 } from "../conf";
+import { addresses, abiQaravan, abiERC1155 } from "../conf";
 import uploadToIPFS from "../../lib/uploadToIPFS";
 
 export default function AddSeller() {
+  const { chain }: any = useNetwork();
+  const address = chain?.unsupported ? addresses[5] : addresses[chain?.id];
+
   const [sellerImageCID, setSellerImageCID] = useState("");
   const [sellerPublicKey, setSellerPublicKey]: any = useLocalStorage({
     key: "public-key",

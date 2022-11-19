@@ -7,6 +7,7 @@ import {
   useAccount,
   useContractInfiniteReads,
   useContractWrite,
+  useNetwork,
   usePrepareContractWrite,
 } from "wagmi";
 import {
@@ -19,7 +20,7 @@ import {
   Paper,
 } from "@mantine/core";
 
-import { address, abiQaravan } from "../conf";
+import { addresses, abiQaravan } from "../conf";
 
 const useStyles: any = createStyles((theme: any, _params: any, getRef) => ({
   root: {
@@ -72,6 +73,9 @@ const useStyles: any = createStyles((theme: any, _params: any, getRef) => ({
 }));
 
 export default function GetOrders() {
+  const { chain }: any = useNetwork();
+  const address = chain?.unsupported ? addresses[5] : addresses[chain?.id];
+
   const { address: addressAccount }: any = useAccount();
 
   const { data: orders }: any = useContractInfiniteReads({
@@ -125,6 +129,9 @@ export default function GetOrders() {
 }
 
 function StepperOrder({ id, item }: any) {
+  const { chain }: any = useNetwork();
+  const address = chain?.unsupported ? addresses[5] : addresses[chain?.id];
+
   const [status, , delivery, buyer, seller] = item;
 
   const { classes } = useStyles();

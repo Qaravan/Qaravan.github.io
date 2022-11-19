@@ -15,6 +15,7 @@ import {
   usePrepareContractWrite,
   useContractWrite,
   useToken,
+  useNetwork,
 } from "wagmi";
 import {
   Card,
@@ -27,9 +28,12 @@ import {
   SimpleGrid,
 } from "@mantine/core";
 
-import { address, abiQaravan, abiERC1155, abiERC20 } from "../conf";
+import { addresses, abiQaravan, abiERC1155, abiERC20 } from "../conf";
 
 export default function GetSeller() {
+  const { chain }: any = useNetwork();
+  const address = chain?.unsupported ? addresses[5] : addresses[chain?.id];
+
   let { seller, erc1155 }: any = useParams();
 
   const [list, setList] = useState([]);
@@ -175,6 +179,9 @@ function CardGoods({
   erc1155,
   publicKey,
 }: any) {
+  const { chain }: any = useNetwork();
+  const address = chain?.unsupported ? addresses[5] : addresses[chain?.id];
+
   const { data } = useToken({
     address: erc20,
   });

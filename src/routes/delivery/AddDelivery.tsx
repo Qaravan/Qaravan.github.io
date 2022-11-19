@@ -1,4 +1,4 @@
-import { useContractWrite, usePrepareContractWrite } from "wagmi";
+import { useContractWrite, useNetwork, usePrepareContractWrite } from "wagmi";
 import { useEffect, useState } from "react";
 import { useForm } from "@mantine/form";
 import { ethers } from "ethers";
@@ -13,11 +13,14 @@ import {
   Divider,
 } from "@mantine/core";
 
-import { address, abiQaravan } from "../conf";
+import { addresses, abiQaravan } from "../conf";
 
 import uploadToIPFS from "../../lib/uploadToIPFS";
 
 export default function AddDelivery() {
+  const { chain }: any = useNetwork();
+  const address = chain?.unsupported ? addresses[5] : addresses[chain?.id];
+
   const [deliveryImageCID, setDeliveryImageCID] = useState("");
 
   const form = useForm({

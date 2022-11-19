@@ -1,6 +1,10 @@
 import { BigNumber, ethers } from "ethers";
 import { Link } from "react-router-dom";
-import { paginatedIndexesConfig, useContractInfiniteReads } from "wagmi";
+import {
+  paginatedIndexesConfig,
+  useContractInfiniteReads,
+  useNetwork,
+} from "wagmi";
 import { IconX } from "@tabler/icons";
 import {
   Card,
@@ -13,9 +17,12 @@ import {
   Notification,
 } from "@mantine/core";
 
-import { address, abiQaravan } from "../conf";
+import { addresses, abiQaravan } from "../conf";
 
 export default function GetSellers() {
+  const { chain }: any = useNetwork();
+  const address = chain?.unsupported ? addresses[5] : addresses[chain?.id];
+
   const { data: goods }: any = useContractInfiniteReads({
     cacheKey: "getGoods",
     ...paginatedIndexesConfig(

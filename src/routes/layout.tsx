@@ -4,7 +4,6 @@ import {
   Navbar,
   Header,
   Footer,
-  Aside,
   Text,
   MediaQuery,
   Burger,
@@ -28,7 +27,6 @@ import {
   IconShoppingCart,
   IconCopyright,
 } from "@tabler/icons";
-import Index from ".";
 
 export default function Layout() {
   const theme = useMantineTheme();
@@ -39,7 +37,7 @@ export default function Layout() {
     useConnect();
 
   const { chain } = useNetwork();
-  console.log("chain", chain);
+
   const {
     chains,
     error: errorChain,
@@ -113,7 +111,7 @@ export default function Layout() {
             </Text>
             <Text style={{ textAlign: "right" }}>
               <Badge color="pink" variant="light" size="lg">
-                Polygon
+                {chain?.name}
               </Badge>
             </Text>
           </SimpleGrid>
