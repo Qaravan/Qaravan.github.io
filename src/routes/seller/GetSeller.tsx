@@ -138,7 +138,7 @@ export default function GetSeller() {
             erc20={erc20}
             amount={amount}
             erc1155={erc1155}
-            publicKey={sellerAccount.publicKey}
+            publicKey={sellerAccount?.publicKey}
           />
         );
       })}
