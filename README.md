@@ -1,4 +1,4 @@
-# Qaravan.store - decentralized marketplace
+# Qaravan.Store - Decentralized On-Chain Marketplace
 
 <img alt="Qaravan" src="https://github.com/Qaravan/Qaravan.github.io/raw/main/public/Screenshot1.png">
 
